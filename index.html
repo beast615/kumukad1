@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kumuk Flex & Advertising</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      color: #222;
+    }
+
+    .navbar {
+      background: #003366;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 1rem 5%;
+    }
+
+    .navbar .logo {
+      color: #ffffff;
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+    }
+
+    .nav-links li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .hero {
+      background: url('https://t4.ftcdn.net/jpg/05/09/54/35/360_F_509543578_lrFjnzza99xVo9BOgAR38YsahXvaWCJd.jpg') no-repeat center center/cover;
+      color: white;
+      text-align: center;
+      padding: 5rem 1rem;
+      opacity: 0;
+      animation: fadeIn 1.5s ease-out forwards;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+    }
+
+    .hero button {
+      margin-top: 1rem;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      background: #ffffff;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .news-section {
+      padding: 2rem 5%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .news-section h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #003366;
+    }
+
+    .news-cards {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+
+    .card {
+      background: white;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      opacity: 0;
+      transform: translateX(-100%);
+      animation: slideInLeft 1s forwards;
+    }
+
+    .card:nth-child(even) {
+      transform: translateX(100%);
+      animation: slideInRight 1s forwards;
+    }
+
+    .card:nth-child(1) { animation-delay: 0.3s; }
+    .card:nth-child(2) { animation-delay: 0.6s; }
+
+    .card img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .card h3 {
+      margin-top: 0.75rem;
+      color: #003366;
+      font-size: 1.1rem;
+    }
+
+    footer {
+      background: #003366;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 3rem;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideInLeft {
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideInRight {
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    /* Responsive Media Queries */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        gap: 0.8rem;
+        margin-top: 1rem;
+      }
+
+      .news-cards {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hero {
+        padding: 3rem 1rem;
+      }
+
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <a class="logo" href="Untitled-1%3D.html">Kumuk Flex & Advertising</a>
+      <ul class="nav-links">
+        <li><a href="Untitled-1%3D.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="designs.html">Designs</a></li>
+        <li><a href="CONTACT.html">About Us</a></li>
+        
+      </ul>
+    </nav>
+    <div class="hero">
+      <h1>Kumuk Flex & Advertising</h1>
+      <p>Welcome to Kumuk AD</p>
+      <button onclick="showAlert()">Join Us</button>
+    </div>
+  </header>
+
+  <section class="news-section">
+    <h2>Latest Designs</h2>
+    <div class="news-cards">
+      <div class="card">
+        <img src="https://img.freepik.com/free-vector/fashion-template-design_23-2150745891.jpg?semt=ais_hybrid&w=740" alt="Wedding Design">
+        <h3>Wedding Banner</h3>
+      </div>
+      <div class="card">
+        <img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/restaurant-website-banner-design-template-9af8d62d2505f04d08f144bc0f2b1bf4_screen.jpg?ts=1652771082" alt="V-card Design">
+        <h3>Restaurant Banner</h3>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Kumuk Flex & Advertising</p>
+  </footer>
+
+  <script>
+    function showAlert() {
+      alert("Thanks for joining Kumuk Flex & Advertising!");
+    }
+  </script>
+</body>
+</html>
